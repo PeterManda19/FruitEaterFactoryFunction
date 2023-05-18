@@ -10,12 +10,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.4/chai.min.js"></script>
 </head>
 <body>
-  <script src="script.js"></script>
   <div id="mocha"></div>
-  <script>
-    // Run the tests
-    mocha.setup('bdd');
-    mocha.run();
-  </script>
+    <script>
+        // the mocha test style to use - we use BDD - Behviour Driven Development
+        mocha.setup('bdd');
+        //ensure the assert function is available
+        var assert = chai.assert;
+    </script>
+
+    <!-- the function to be tested -->
+    <script src="fruitEater.js" charset="utf-8"></script>
+    <!-- followed by the tests -->
+    <script src="test/fruitEater.tests.js" charset="utf-8"></script>
+
+    <script>
+        // configure and run mocha
+        mocha.checkLeaks();
+        mocha.run();
+    </script>
 </body>
 </html>

@@ -20,5 +20,22 @@ function FruitEater() {
     };
 }
   
-  
+// Create an instance of FruitEater
+var fruitEater = FruitEater();
 
+// Get references to the DOM elements
+var appleBtn = document.getElementById('appleBtn');
+var pearBtn = document.getElementById('pearBtn');
+var applesEatenElem = document.getElementById('applesEaten');
+var pearsEatenElem = document.getElementById('pearsEaten');
+
+// Add event listeners to the buttons
+appleBtn.addEventListener('click', function() {
+  fruitEater.eat('apple');
+  applesEatenElem.textContent = fruitEater.applesEaten();
+});
+
+pearBtn.addEventListener('click', function() {
+  fruitEater.eat('pear');
+  pearsEatenElem.textContent = fruitEater.pearsEaten();
+});
